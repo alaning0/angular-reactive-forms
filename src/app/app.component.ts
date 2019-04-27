@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-export type EditorType = 'name' | 'profile';
+export type EditorType = 'name' | 'profile' | 'cities';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +16,10 @@ export class AppComponent {
 
   get showProfileEditor() {
     return this.editor === 'profile';
+  }
+
+  get showMultipleCitiesEditor() {
+    return this.editor === 'cities';
   }
 
   toggleEditor(type: EditorType) {

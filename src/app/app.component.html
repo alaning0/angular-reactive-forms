@@ -3,12 +3,15 @@
 <nav>
   <a (click)="toggleEditor('name')">Name Editor</a>
   <a (click)="toggleEditor('profile')">Profile Editor</a>
+  <a (click)="toggleEditor('cities')">Multiple Cities Editor</a>
+
 </nav>
 
 <app-name-editor *ngIf="showNameEditor"></app-name-editor>
 
 <app-profile-editor *ngIf="showProfileEditor"></app-profile-editor>
 
+<app-multiple-cities-editor *ngIf="showMultipleCitiesEditor"></app-multiple-cities-editor>
 
 <!-- 
 Copyright Google LLC. All Rights Reserved.

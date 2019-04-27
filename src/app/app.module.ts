@@ -5,12 +5,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NameEditorComponent } from './name-editor/name-editor.component';
 import { ProfileEditorComponent } from './profile-editor/profile-editor.component';
+import { MultipleCitiesEditorComponent } from './multiple-cities-editor/multiple-cities-editor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NameEditorComponent,
-    ProfileEditorComponent
+    ProfileEditorComponent,
+    MultipleCitiesEditorComponent
   ],
   imports: [
     BrowserModule,
