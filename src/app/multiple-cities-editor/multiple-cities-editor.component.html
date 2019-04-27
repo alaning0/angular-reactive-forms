@@ -11,12 +11,19 @@
          required>
    </div> <!-- end form-group -->
 
+   <button style="margin-top:5px; margin-bottom:5px;" type="button" class="btn btn-primary btn-sm" (click)="addNewCity()">
+   <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add New City
+   </button>
+   
    <div formArrayName="cities">
       <div style="margin-top:5px; margin-bottom:5px;" *ngFor="let city of myForm.get('cities').controls; let i=index">
          <fieldset>
 
             <legend>
                <h4>City {{i+1}}: 
+                  <button style="margin-left:35px;" type="button" class="btn btn-danger" (click)="deleteCity(i)">
+                  <span class="glyphicon glyphicon-minus"aria-hidden="true"></span> Remove City
+                  </button>
                </h4>
             </legend>
 

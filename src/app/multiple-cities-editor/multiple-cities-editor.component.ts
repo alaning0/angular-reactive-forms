@@ -51,6 +51,21 @@ export class MultipleCitiesEditorComponent implements OnInit {
     return arr;
   }
 
+  addNewCity() {
+    let control = <FormArray>this.myForm.controls.cities;
+    control.push(
+      this.fb.group({
+        city: [''],
+        addressLines: this.fb.array([])
+      })
+    )
+  }
+  
+  deleteCity(index) {
+    let control = <FormArray>this.myForm.controls.cities;
+    control.removeAt(index)
+  }
+
   onSubmit() {
     alert(this.myForm.value);
   }
