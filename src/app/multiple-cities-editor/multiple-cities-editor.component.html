@@ -1,0 +1,78 @@
+<h2>User Form</h2>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(f)">
+   <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text"
+         id="name"
+         class="form-control"
+         placeholder="Name"
+         name="name"
+         formControlName="name"
+         required>
+   </div> <!-- end form-group -->
+
+   <div formArrayName="cities">
+      <div style="margin-top:5px; margin-bottom:5px;" *ngFor="let city of myForm.get('cities').controls; let i=index">
+         <fieldset>
+
+            <legend>
+               <h4>City {{i+1}}: 
+               </h4>
+            </legend>
+
+            <div [formGroupName]="i">
+               <div class="form-inline">
+
+                  <div class="form-group"> <!-- start form-group -->
+                     <label style="margin-right:80px;" class="col-form-label" for="city">City</label>
+                     <input type="text"
+                        class="form-control"
+                        id="city"
+                        placeholder="City"
+                        name="type"
+                        formControlName="city" 
+                        style="margin-right:5px;" 
+                        required>
+                  </div> <!-- end form-group -->
+
+               </div> <!-- end form-inline -->
+
+               <div class="form-inline">
+                  <div class="form-group"> 
+
+                     <div formArrayName="addressLines">
+                        <div style="margin-top:5px; margin-bottom:5px;" *ngFor="let lines of city.get('addressLines').controls; let j=index">
+                           <div [formGroupName]="j">
+
+                              <div class="form-group">
+                                 <label style="margin-right:5px;"  class="col-form-label" for="emailId">Address Line {{j + 1}}</label>
+                                 <input formControlName="addressLine"
+                                    class="form-control"
+                                    style="margin-right:5px;" 
+                                    type="email"
+                                    placeholder="Address lines"
+                                    id="address"
+                                    name="address"
+                                    />
+                              </div> <!-- end form-group -->
+
+                           </div> <!-- end formGroupName j -->
+                        </div>  <!-- end div loop -->
+                     </div> <!-- end addressLines -->
+
+                  </div> <!-- end form-group -->
+               </div> <!-- end form-inline -->
+
+            </div> <!-- end formGroupName i -->
+
+         </fieldset>
+      </div>
+
+   </div>
+
+  <button type="submit" class="btn btn-success">Submit</button>
+  <button type="button" class="btn btn-basic" >Cancel</button>
+
+</form>
+
+ <pre>{{myForm.value | json}}</pre>
