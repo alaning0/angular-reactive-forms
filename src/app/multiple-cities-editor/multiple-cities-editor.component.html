@@ -40,6 +40,10 @@
                         formControlName="city" 
                         style="margin-right:5px;" 
                         required>
+
+                        <button style="margin-right:5px;"  type="button" class="btn btn-success btn-sm" (click)="addNewAddressLine(city.controls.addressLines)">
+                          <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Add New Address Line
+                        </button>
                   </div> <!-- end form-group -->
 
                </div> <!-- end form-inline -->
@@ -61,6 +65,9 @@
                                     id="address"
                                     name="address"
                                     />
+                                    <button style="margin-right:5px;" type="button" class="btn btn-danger btn-sm" (click)="deleteAddressLine(city.controls.addressLines, j)">
+                                    <span class="glyphicon glyphicon-minus"aria-hidden="true">Remove Address Line</span>
+                                    </button>
                               </div> <!-- end form-group -->
 
                            </div> <!-- end formGroupName j -->

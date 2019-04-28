@@ -66,6 +66,17 @@ export class MultipleCitiesEditorComponent implements OnInit {
     control.removeAt(index)
   }
 
+  addNewAddressLine(control) {
+    control.push(
+      this.fb.group({
+        addressLine: ['']
+      }))
+  }
+
+  deleteAddressLine(control, index) {
+    control.removeAt(index)
+  }
+  
   onSubmit() {
     alert(this.myForm.value);
   }
